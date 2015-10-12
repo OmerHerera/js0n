@@ -1,10 +1,12 @@
+![image](https://cloud.githubusercontent.com/assets/5514007/10438312/9bf6b83a-713b-11e5-90bf-327d2aeaf066.png)
+
 # js0n
 > js0n is a testing platform for services utilizing JavaScript Object Notation (JSON)
 
 #Services
 
 ## Echo JSON
-Returns a customized JSON object that you can define through a REST-style URL. For example, calling ```http://localhost:3000/echo?name=omer&id=2&project=js0n``` will return the following
+Returns a customized JSON object that you can define through a REST-style URL. For example, calling ```https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n``` will return the following
 JSON:
 
 ```
@@ -14,7 +16,9 @@ JSON:
 	project: "js0n"
 }
 ```
+Endpoint: ```https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n```
 
+[Echo JSON](https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n)
 
 
 ## Headers
@@ -34,8 +38,9 @@ Returns the HTTP request headers received from the client.
 	if-none-match: "W/"1b8-BNvdbtFq5G8GN3K68Ae5tg""
 }
 ```
-Endpoint: ```https://js0n.herokuapp.com//headers```
+Endpoint: ```https://js0n.herokuapp.com/headers```
 
+[Echo JSON](https://js0n.herokuapp.com/headers)
 
 ## Date & Time
 
@@ -48,7 +53,9 @@ Returns a JSON object with the current date and time in human-readable form, and
 	milliseconds_since_epoch: 1444678717275
 }
 ```
-Endpoint: ```https://js0n.herokuapp.com//date```
+Endpoint: ```https://js0n.herokuapp.com/date```
+
+[Echo JSON](https://js0n.herokuapp.com/date)
 
 ## Validation
 
@@ -63,7 +70,9 @@ Valid JSON:
 	size: 2
 }
 ```
-Endpoint: ```https://js0n.herokuapp.com//validate/{"name":"omer","id":1234567}```
+Endpoint: ```https://js0n.herokuapp.com/validate/{"name":"omer","id":1234567}```
+
+[Validation](https://js0n.herokuapp.com/validate/{"name":"omer","id":1234567})
 
 Invalid JSON:
 
@@ -75,4 +84,6 @@ Invalid JSON:
 }
 ```
 
-Endpoint: ```https://js0n.herokuapp.com//validate/notJson```
+Endpoint: ```https://js0n.herokuapp.com/validate/notJson```
+
+[Validation](https://js0n.herokuapp.com/validate/notjson)

@@ -34,7 +34,7 @@ Returns the HTTP request headers received from the client.
 	if-none-match: "W/"1b8-BNvdbtFq5G8GN3K68Ae5tg""
 }
 ```
-Endpoint: ```http://localhost:3000/headers```
+Endpoint: ```https://js0n.herokuapp.com//headers```
 
 
 ## Date & Time
@@ -48,7 +48,7 @@ Returns a JSON object with the current date and time in human-readable form, and
 	milliseconds_since_epoch: 1444678717275
 }
 ```
-Endpoint: ```http://localhost:3000/date```
+Endpoint: ```https://js0n.herokuapp.com//date```
 
 ## Validation
 
@@ -63,7 +63,7 @@ Valid JSON:
 	size: 2
 }
 ```
-Endpoint: ```http://localhost:3000/validate/{"name":"omer","id":1234567}```
+Endpoint: ```https://js0n.herokuapp.com//validate/{"name":"omer","id":1234567}```
 
 Invalid JSON:
 
@@ -75,4 +75,4 @@ Invalid JSON:
 }
 ```
 
-Endpoint: ```http://localhost:3000/validate/notJson```
+Endpoint: ```https://js0n.herokuapp.com//validate/notJson```

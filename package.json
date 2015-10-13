@@ -1,6 +1,6 @@
 {
   "name": "js0n",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "js0n is a testing platform for services utilizing JavaScript Object Notation (JSON)",
   "main": "index.js",
   "scripts": {

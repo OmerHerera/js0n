@@ -9,95 +9,99 @@ var express = require('express')
 
 
 
+function _getResponse (url, req) {
 
-router.get('/package.json', function (req, res, next) {
-    try {
-        res.json(pckJson);
-    }
-    catch (e) {
-        console.error("An Exception when getting the GET Request");
-    }
-});
+    var response = {
+        "package.json": {
+            "_get": function () {
+                return pckJson;
+            }
+        },
+        "ip": {
+            "_get": function (req) {
+                return {
+                    ip: req.connection.remoteAddress
+                };
+            }
+        },
+        "headers": {
+            "_get": function (req) {
+                return req.headers;
+            }
+        },
+        "date": {
+            "_get": function () {
+                return {
+                    "date": new Date().toDateString(),
+                    "time": new Date().toLocaleTimeString(),
+                    "milliseconds_since_epoch": Date.now()
+                };
+            }
+        },
+        "md5": {
+            "_get": function (req) {
+                return {
+                    "md5": md5(req.params.userInput),
+                    "original": req.params.userInput
+                };
+            }
+        },
+        "validate": {
+            "_get": function () {
+                var string_json = req.params.userInput;
+                try {
+                    var result;
 
-router.get('/ip', function (req, res, next) {
-    try {
-        res.json({ip:req.connection.remoteAddress});
-    }
-    catch (e) {
-        console.error("An Exception when getting the GET Request");
-    }
-});
+                    var obj = JSON.parse(string_json);
+                    result = {
+                        "validate": true,
+                        "original": string_json,
+                        "size": Object.keys(obj).length
+                    };
 
-router.get('/headers', function (req, res, next) {
-    try {
-        res.json(req.headers);
-        //res.send(response).end();
-    }
-    catch (e) {
-        console.error("An Exception when getting the GET Request");
-    }
-});
-
-router.get('/date', function (req, res, next) {
-    try {
-        res.json({
-            "date": new Date().toDateString(),
-            "time": new Date().toLocaleTimeString(),
-            "milliseconds_since_epoch": Date.now()
-        });
-    }
-    catch (e) {
-        console.error("An Exception when getting the GET Request");
-    }
-});
-
-router.get('/md5/:text', function (req, res, next) {
-    try {
-        res.json({
-            "md5": md5(req.params.text),
-            "original": req.params.text
-        });
-    }
-    catch (e) {
-        console.error("An Exception when getting the GET Request");
-    }
-});
-
-
-router.get('/validate/:json', function (req, res, next) {
-    try {
-        var string_json = req.params.json;
-        try {
-            var obj = JSON.parse(string_json);
-            res.json({
-                "validate": true,
-                "original": string_json,
-                "size": Object.keys(obj).length
-            });
+                }
+                catch (e) {
+                    result = {
+                        "validate": false,
+                        "original": string_json,
+                        "error_info": "not a valid JSON"
+                    };
+                }
+                return result;
+            }
+        },
+        "echo": {
+            "_get": function () {
+                return req.query;
+            }
         }
-        catch (e) {
-            res.json({
-                "validate": false,
-                "original": string_json,
-                "error_info": "not a valid JSON"
-            });
+    };
+    return response[url]._get(req);
+}
+router.all("*/:userInput", function (req, res, next) {
+    try {
+
+        var url =  req.url.substr(1, req.url.length);
+
+
+        if (url.indexOf("/") > -1) {
+            url = url.substring(0, url.indexOf("/"));
         }
 
+        if (url.indexOf("?") > 0) {
+            url = req.url.substr(1, req.url.indexOf("?")-1)
+        }
+
+        res.json(_getResponse(url, req));
     }
+
     catch (e) {
         console.error("An Exception when getting the GET Request");
     }
+
 });
 
 
-router.get('/echo', function (req, res, next) {
-    try {
-        res.json(req.query);
-    }
-    catch (e) {
-        console.error("An Exception when getting the GET Request");
-    }
-});
 
 
 app.use('/', router);

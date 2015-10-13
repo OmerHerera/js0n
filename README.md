@@ -1,10 +1,11 @@
 ![image](https://cloud.githubusercontent.com/assets/5514007/10447467/58437766-718d-11e5-9be4-968e2182daf4.png)
 > js0n is a testing platform for services utilizing JavaScript Object Notation (JSON)
 
+
 #Services
 
 ## Echo JSON
-Returns a customized JSON object that you can define through a REST-style URL. For example, calling ```https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n``` will return the following
+Returns a customized JSON object that you can define through a REST-style URL. The platform support both ```GET/POST``` methods. For example, calling ```https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n``` will return the following
 JSON:
 
 ```
@@ -85,3 +86,6 @@ Invalid JSON:
 Endpoint: ```https://js0n.herokuapp.com/validate/notJson```
 
 [Validation](https://js0n.herokuapp.com/validate/notjson)
+
+# Methods
+Platform support both GET/POST methods

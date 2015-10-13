@@ -1,4 +1,4 @@
-![image](https://cloud.githubusercontent.com/assets/5514007/10438312/9bf6b83a-713b-11e5-90bf-327d2aeaf066.png)
+![image](https://cloud.githubusercontent.com/assets/5514007/10447467/58437766-718d-11e5-9be4-968e2182daf4.png)
 
 # js0n
 > js0n is a testing platform for services utilizing JavaScript Object Notation (JSON)

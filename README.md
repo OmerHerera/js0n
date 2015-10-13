@@ -44,7 +44,7 @@ Returns the HTTP request headers received from the client.
 ```
 Endpoint: ```https://js0n.herokuapp.com/headers```
 
-[Echo JSON](https://js0n.herokuapp.com/headers)
+[Headers](https://js0n.herokuapp.com/headers)
 
 ## Date & Time
 
@@ -91,6 +91,19 @@ Invalid JSON:
 Endpoint: ```https://js0n.herokuapp.com/validate/notJson```
 
 [Validation](https://js0n.herokuapp.com/validate/notjson)
+
+## MD5
+
+Returns the MD5 hash code of a given string. To use, call http://md5.jsontest.com/?text=example_text, where example_text is the text that you want the MD5 hash for. For example, the above request would return:
+```
+{
+	md5: "d59def02cb3e44c8793ad9bb069c2d52",
+	original: "textText"
+}
+```
+Endpoint: ```http://js0n.herokuapp.com/md5/textText```
+
+[MD5](http://js0n.herokuapp.com/md5/textText)
 
 # Methods
 Platform support both GET/POST methods

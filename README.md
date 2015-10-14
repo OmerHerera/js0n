@@ -10,7 +10,7 @@
 #Services
 
 ## Echo JSON
-Returns a customized JSON object that you can define through a REST-style URL. The platform support both ```GET/POST``` methods. For example, calling ```https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n``` will return the following
+Returns a customized JSON object that you can define through a REST-style URL. For example, calling ```https://js0n.herokuapp.com/echo?name=omer&id=2&project=js0n``` will return the following
 JSON:
 
 ```
@@ -94,16 +94,16 @@ Endpoint: ```https://js0n.herokuapp.com/validate/notJson```
 
 ## MD5
 
-Returns the MD5 hash code of a given string. To use, call http://md5.jsontest.com/?text=example_text, where example_text is the text that you want the MD5 hash for. For example, the above request would return:
+Returns the MD5 hash code of a given string. To use, call https://js0n.herokuapp.com/md5/textText, where example_text is the text that you want the MD5 hash for. For example, the above request would return:
 ```
 {
-	md5: "d59def02cb3e44c8793ad9bb069c2d52",
-	original: "textText"
+	md5: "fa4c6baa0812e5b5c80ed8885e55a8a6",
+	original: "example_text"
 }
 ```
 Endpoint: ```http://js0n.herokuapp.com/md5/textText```
 
-[MD5](http://js0n.herokuapp.com/md5/textText)
+[MD5](https://js0n.herokuapp.com/md5/textText)
 
 # Methods
 Platform support both GET/POST methods

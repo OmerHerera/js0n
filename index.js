@@ -49,8 +49,8 @@ function _getResponse (url, req) {
         "validate": {
             "_get": function () {
                 var string_json = req.params.userInput;
+                var result;
                 try {
-                    var result;
 
                     var obj = JSON.parse(string_json);
                     result = {
@@ -89,7 +89,7 @@ router.all("*/:userInput", function (req, res, next) {
         }
 
         if (url.indexOf("?") > 0) {
-            url = req.url.substr(1, req.url.indexOf("?")-1)
+            url = req.url.substr(1, req.url.indexOf("?") - 1);
         }
 
         res.json(_getResponse(url, req));

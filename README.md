@@ -1,6 +1,7 @@
 ![image](https://cloud.githubusercontent.com/assets/5514007/10447467/58437766-718d-11e5-9be4-968e2182daf4.png)
 > js0n is a testing platform for services utilizing JavaScript Object Notation (JSON)
 
+[![Build Status](https://travis-ci.org/OmerHerera/js0n.svg?branch=master)](https://travis-ci.org/OmerHerera/js0n)
 [![Dependency Status](https://david-dm.org/OmerHerera/js0n.svg?theme=shields.io)](https://david-dm.org/OmerHerera/js0n)
 [![devDependency Status](https://david-dm.org/OmerHerera/js0n/dev-status.svg?theme=shields.io)](https://david-dm.org/OmerHerera/js0n#info=devDependencies)
 [![npm version](https://badge.fury.io/js/js0n.svg)](http://badge.fury.io/js/js0n)
